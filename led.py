@@ -11,11 +11,11 @@ def setup():
 
 def main():
     while True:
-        print ('[+] ', end=", ")
+        print ('[+] ')
         # Turn on LED
         GPIO.output(LedPin, GPIO.LOW)
         time.sleep(0.5)
-        print ('[-] ',end=", ")
+        print ('[-] ')
         # Turn off LED
         GPIO.output(LedPin, GPIO.HIGH)
         time.sleep(0.5)
