@@ -2,27 +2,34 @@
 import RPi.GPIO as GPIO
 import time
 
-LedPin = 17
+LedPins = [17,27]
 
 def setup():
     
     GPIO.setmode(GPIO.BCM)
-    GPIO.setup(LedPin, GPIO.OUT, initial=GPIO.HIGH)
+    for led in LedPins:
+        GPIO.setup(led, GPIO.OUT, initial=GPIO.HIGH)
 
 def main():
     while True:
         print ('[+] ')
-        # Turn on LED
-        GPIO.output(LedPin, GPIO.LOW)
+        on(0)
+        off(1)
         time.sleep(0.5)
         print ('[-] ')
-        # Turn off LED
-        GPIO.output(LedPin, GPIO.HIGH)
+        on(1)
+        off(0)
         time.sleep(0.5)
 
+def on(i):
+    GPIO.output(LedPins[i], GPIO.LOW)
+
+def off(i):
+    GPIO.output(LedPins[i], GPIO.HIGH)
 
 def destroy():
-    GPIO.output(LedPin, GPIO.HIGH)
+    for led in LedPins:
+        GPIO.output(led, GPIO.HIGH)
     GPIO.cleanup()                   
 
 
