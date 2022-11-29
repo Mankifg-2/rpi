@@ -9,14 +9,14 @@
     - Uporabi dodatne nastavitve če potrebno.
 
 # Povezljivost
-Kako ugotovim na katerem IP naslovu je R-Pi?
-''' bash
-ip address
-'''
 
-## SSH
+## IP
+Ugotavljanje ip-ja. Napiši  ``` ip address ``` v konzolo v RPI ali pogledaš v router.
 
-## VNC
+## Povezovanje
+| Način | Kako     | +/-               |
+| :-------- | :------- | :------------------------- |
+| cmd | ssh [ip] | - / Dostop samo do ukazne vrstice  |
 
 # Raziskovanje pogostih ukazov lupine bash
 
