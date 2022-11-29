@@ -1,7 +1,7 @@
 import os
 import glob
 import time
-import datetime
+ 
 os.system('modprobe w1-gpio')
 os.system('modprobe w1-therm')
  
@@ -26,9 +26,7 @@ def read_temp():
         temp_c = float(temp_string) / 1000.0
         temp_f = temp_c * 9.0 / 5.0 + 32.0
         return temp_c, temp_f
-    
+        
 while True:
-        GetDateTime = datetime.datetime.now() .strftime("%Y-%m-%d %H:%M:%S")
-        tempdata = read_temp()
-        tempdata = str(tempdata)
-        print(tempdata)
+	print(read_temp())	
+	time.sleep(1)
